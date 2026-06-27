@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Raízes do Nordeste</title>
+    <!-- Link fonts da Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/nav-bottom.css">
+    <link rel="stylesheet" href="./css/banner.css">
+</head>
+
+<body>
+    <!-- Banner de Consentimento -->
+    <section id="banner-lgpd" class="banner-lgpd">
+        <div class="banner-lgpd__conteudo">
+            <p>
+                Usamos seus dados como nome, pedidos e pontos de fidelidade, para que, quando faça o pedido, receba
+                recompensa em acumular pontos.
+                Você pode recusar se quiser, isso não afetará ao fazer o pedido. Só não acumulará pontos.
+            </p>
+        </div>
+        <div class="banner-lgpd__acoes">
+            <button id="btn-lgpd-recusar" class="btn btn--fantasma">Recusar</button>
+            <button id="btn-lgpd-aceitar" class="btn btn--primario">Aceitar</button>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="cabecalho">
+        <section class="cabecalho-marca">
+            <img class="cabecalho__logo" src="./img/logo.jpeg"/>
+            <span class="cabecalho__nome">Raízes do Nordeste</span>
+        </section>
+        <button id="btn-unidade" class="seletor-unidade" aria-haspopup="true">
+            <span id="unidade-atual-nome">Recife - Boa vista</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Seletor de unidade -->
+    <section id="popover-unidade" class="popover-unidade">
+        <p class="popover-unidade__titulo">Escolha sua unidade</p>
+        <div id="lista-unidades" class="popover-unidade__lista"></div>
+    </section>
+
+    <!-- Nav abaixo da página -->
+    <nav class="bottom-nav">
+        <button class="nav-item nav-btn ativo" data-tela="tela-cardapio">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M264-216h96v-240h240v240h96v-348L480-726 264-564v348Zm-72 72v-456l288-216 288 216v456H528v-240h-96v240H192Zm288-327Z"/></svg></span>
+            <span class="label">Home</span>
+        </button>
+        <button class="nav-item nav-btn" data-tela="tela-pedido">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M288-96q-40 0-68-27.5T192-190v-553q0-34 22-59.5t56-32.5l354-74v626l-338.95 71.13Q277-210 270.5-203.75 264-197.5 264-190q0 10 7.2 16t16.8 6h407.55v-624H768v696H288Zm96-211 168-36v-477l-168 35v478Zm-72 15v-477l-30 6q-8 2-13 7.19T264-743v463q5-2 10.5-3t10.5-3l27-6Zm-48-469v481-481Z"/></svg></span>
+            <span class="label">Pedido</span>
+        </button>
+        <button class="nav-item nav-btn" data-tela="tela-carrinho">
+            <span id="contador-carrinho" class="contador-carrinho">0</span>
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM253-696l83 192h301l82-192H253Zm-31-72h570q14 0 20.5 11t1.5 23L702.63-476.14Q694-456 676.5-444T637-432H317l-42 72h493v72H276q-43 0-63.5-36.15-20.5-36.16.5-71.85l52-90-131-306H48v-72h133l41 96Zm114 264h301-301Z"/></svg></span>
+            <span class="label">Carrinho</span>
+        </button>
+        <button class="nav-item nav-btn" data-tela="tela-fidelidade">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M456-312h48v-48h24q20.4 0 34.2-13.8Q576-387.6 576-408v-48q0-20.4-13.8-34.2Q548.4-504 528-504h-96v-48h144v-48h-72v-48h-48v48h-24q-20.4 0-34.2 13.8Q384-572.4 384-552v48q0 20.4 13.8 34.2Q411.6-456 432-456h96v48H384v48h72v48ZM168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm0-72h624v-432H168v432Zm0 0v-432 432Z"/></svg></span>
+            <span class="label">Fidelidade</span>
+        </button>
+    </nav>
+
+    <main class="conteudo-container">
+        <!-- Tela 1: Cardápio -->
+        <section id="tela-cardapio" class="tela tela--ativa">
+            <!-- Banner do site com img de fundo -->
+            <section class="exbir-banner-site" id="exibir-banner">
+                <div class="exibir-banner-container">
+                    <h1 class="titulo-banner">Venha experimentar pratos do Nordeste</h1>
+                    <p>Venha comer deliciosos pratos tipicos do nordeste.</p>
+                </div>
+            </section>
+            <div class="tela__cabelhaco">
+                <h1 class="tela__titulo">O que pedirá hoje?</h1>
+                <p class="tela__subtitulo">Cardápio de <strong id="cardapio-nome-unidade">Recife - Boa vista</strong>
+                </p>
+            </div>
+
+            <div id="filtros-categoria" class="filtros-categoria"></div>
+
+            <div id="grade-produtos" class="grade-produtos"></div>
+        </section>
+
+        <!-- Tela 2: Carrinho -->
+        <section id="tela-carrinho" class="tela">
+            <div class="tela__cabecalho">
+                <h1 class="tela__titulo">Seu carrinho</h1>
+                <p class="tela__subtitulo">Revise antes de confirmar o pedido.</p>
+            </div>
+
+            <div id="carrinho-vazio" class="estado-vazio" hidden>
+                <p>Seu carrinho está vazio.</p>
+                <button class="btn btn--primario" data-tela="tela-cardapio">Ver cardápio</button>
+            </div>
+
+            <div id="lista-carrinho" class="lista-carrinho"></div>
+
+            <div id="resumo-carrinho" class="resumo-carrinho" hidden>
+                <div class="resumo-carrinho__linha">
+                    <span>Total</span>
+                    <strong id="carrinho-total">R$ 0,00</strong>
+                </div>
+                <button id="btn-confirmar-pedido" class="btn btn--primario btn--bloco">Confirmar pedido</button>
+            </div>
+        </section>
+
+        <!-- Tela 3: Pedido (Pagamento + Status) -->
+        <section id="tela-pedido" class="tela">
+            <div id="tela__cabecalho">
+                <h1 class="tela__titulo">Seu pedido</h1>
+                <p class="tela__subtitulo">Acompanhe o status em tempo real</p>
+            </div>
+
+            <div id="pedido-sem-pedido" class="estado-vazio" hidden>
+                <p>Nenhum pedido em andamento...</p>
+                <button class="btn btn--primario" data-tela="tela-cardapio">Fazer um pedido</button>
+            </div>
+
+            <div id="pedido-ativo" class="pedidoativo" hidden>
+
+                <!-- Etapa de pagamento -->
+                <div id="bloco-pagamento" class="bloco-pagamento">
+                    <h2 class="bloco-pagamento__titulo">Pagamento</h2>
+                    <p class="bloco-pagamento__texto">
+                        O pagamento é processado por um serviço externo seguro. Nós só recebemos a confirmação do seu
+                        pedido.
+                    </p>
+                    <div class="metodo-pagamento">
+                        <label for="" class="metodo-pagamento__opcao">
+                            <input type="radio" name="pagamento" id="pix" checked> PIX
+                        </label>
+                        <label for="" class="metodo-pagamento__opcao">
+                            <input type="radio" name="pagamento" id="cartao"> Cartão de crédito
+                        </label>
+                    </div>
+                    <button id="btn-pagar" class="btn btn--primario btn--bloco">Pagar agora</button>
+                    <p id="pagamento-mensagem" class="mensagem-erro" hidden></p>
+                </div>
+
+                <!-- Linha de tempo do status -->
+                <div id="bloco-status" class="bloco-staus" hidden>
+                    <h2 class="bloco-status__titulo">Pedidos <span id="status-numero-pedido"></span></h2>
+                    <ol id="linha-tempo" class="linha-tempo"></ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tela 4: fidelidade -->
+        <section id="tela-fidelidade" class="tela">
+            <div class="tela__cabecalho">
+                <h1 class="tela__titulo">Seu clube de fidelidade</h1>
+                <p class="tela__subtitulo">A cada R$ 1 em pedidos, você ganha 1 ponto</p>
+            </div>
+
+            <div id="fidelidade-bloqueada" class="estado-vazio" hidden>
+                <p>Você recursou o uso de dados para fidelidade, então não estamos guardando seus pontos.</p>
+                <button id="btn-reativar-lgpd" class="btn btn--primario">Quero participar</button>
+            </div>
+
+            <div id="fidelidade-conteudo" class="fidelidade">
+                <div class="cartao-pontos">
+                    <span class="cartao-pontos__label">Seus pontos:</span>
+                    <span id="fidelidade-pontos" class="cartao-pontos__valor">0</span>
+                </div>
+
+                <div id="lista-recompensas" class="lista-recompensas"></div>
+                <div class="fidelidade__historico">
+                    <h2 class="fidelidade__subtitulo">Histórico de pedidos:</h2>
+                    <ul id="historico-pedidos" class="historico-pedidos"></ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast (feedback)-->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="./js/dados.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

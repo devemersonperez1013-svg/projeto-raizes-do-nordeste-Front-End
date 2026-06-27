@@ -1,0 +1,67 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #280905;
+
+    border-top: 1px solid #ccc;
+    padding: 8px 0;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    z-index: 100;
+}
+
+.nav-item.nav-btn.ativo {
+    padding: 0.2rem;
+    border: none;
+    background-color: transparent;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #6b5c4d;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nav-item.nav-btn.ativo {
+    background-color: #8f391f41;
+    color: #fff;
+    border-radius: 1rem;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888;
+    font-size: 11px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    flex: 0 1 auto;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    background-color: orange;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: bold;
+    padding: 2px;
+    color: black;
+    transform: translate(8px, -6px);
+}
+
+.nav-btn.ativo .contador-carrinho {
+    background-color: #FBE6C2;
+}
+
+.nav-item.ativo {
+    color: #000;
+}
