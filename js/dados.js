@@ -7,7 +7,7 @@
 const unidades = [
   { id: "u1", nome: "Recife — Boa Vista" },
   { id: "u2", nome: "São Paulo — Pinheiros" },
-  { id: "u3", nome: "Salvador — Barra" }
+  { id: "u3", nome: "Bahia — Salvador" },
 ];
 
 const produtos = [
@@ -64,10 +64,10 @@ const produtos = [
 
 // Etapas possíveis do status de um pedido, em ordem
 const etapasStatus = [
-  { chave: "confirmado",  rotulo: "Pagamento confirmado" },
-  { chave: "preparo",     rotulo: "Em preparo na cozinha" },
-  { chave: "pronto",      rotulo: "Pronto para retirada/entrega" },
-  { chave: "entregue",    rotulo: "Entregue" }
+  { chave: "confirmado", rotulo: "Pagamento confirmado" },
+  { chave: "preparo", rotulo: "Em preparo na cozinha" },
+  { chave: "pronto", rotulo: "Pronto para retirada/entrega" },
+  { chave: "entregue", rotulo: "Entregue" }
 ];
 
 // Recompensas fixas do clube de fidelidade
