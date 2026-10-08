@@ -6,12 +6,6 @@ Aplicação web do tipo **Single Page Application (SPA)** desenvolvida com HTML,
 
 ---
 
-## 🔗 Site hospedada...
-
-[Acessar o projeto online](https://devemersonperez1013-svg.github.io/projeto-raizes-do-nordeste-Front-End/)
-
----
-
 ## 📸 Visão Geral
 
 O sistema simula uma aplicação de pedidos para restaurante, com navegação entre telas sem recarregar a página, carrinho de compras funcional, sistema de fidelidade e consentimento de dados (LGPD).
